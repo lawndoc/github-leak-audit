@@ -1,0 +1,44 @@
+name: "Leak Monitor"
+
+on:
+  schedule:
+   - cron: "30 7 * * *"  # daily at 2:30am CST
+  workflow_dispatch:
+
+jobs:
+  security-audit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+
+      - name: "Install dependencies"
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install -r requirements.txt
+
+      - name: Run security audit script
+        run: |
+          python leak_monitor.py
+        env:
+          APP_ID: ${{ secrets.APP_ID }}             # GitHub App ID
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}   # GitHub App private key
+          PAT: ${{ secrets.PAT }}                   # Personal Access Token (if not using GitHub App)
+          ORG_NAME: ${{ secrets.ORG_NAME }}         # Organization "username" as it appears in GitHub
+          ORG_NICKNAME: ${{ secrets.ORG_NICKNAME }} # Short name for the organization (e.g. "microsoft")
+
+      - name: Send report via email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.EMAIL_SERVER }} # SMTP server address
+          server_port: 465
+          username: ${{ secrets.EMAIL_USERNAME }}     # SMTP username
+          password: ${{ secrets.EMAIL_PASSWORD }}     # SMTP password
+          subject: "Leak Monitor Report"
+          html_body: file://LeakReport.html
