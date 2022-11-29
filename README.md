@@ -27,14 +27,14 @@ Below is an overview of the secrets that will need to be set up in your forked r
 
 | Secret | Description | Required |
 | --- | --- | --- |
-| APP_ID | The App ID of the GitHub App you created | Y |
-| PRIVATE_KEY | The private key of the GitHub App you created | Y |
-| PAT | You can use a personal access token (PAT) instead of a GitHub App | N |
-| ORG_NAME | Your organization's "username" as it appears on GitHub | Y |
-| ORG_NICKNAME | The short name of your organization used to identify potential leaks (ex. microsoft) | Y |
-| EMAIL_SERVER | SMTP server address to send the email report | Y |
-| EMAIL_USERNAME | Username to authenticate to the SMTP server | Y |
-| EMAIL_PASSWORD | Password to authenticate to the SMTP server | Y |
+| APP_ID | The App ID of the GitHub App you created | If not using PAT |
+| PRIVATE_KEY | The private key of the GitHub App you created | If not using PAT |
+| PAT | You can use a personal access token (PAT) instead of a GitHub App | If not using App |
+| ORG_NAME | Your organization's "username" as it appears on GitHub | Yes |
+| ORG_NICKNAME | The short name of your organization used to identify potential leaks (ex. microsoft) | Yes |
+| EMAIL_SERVER | SMTP server address to send the email report | Yes |
+| EMAIL_USERNAME | Username to authenticate to the SMTP server | Yes |
+| EMAIL_PASSWORD | Password to authenticate to the SMTP server | Yes |
 
 ### 3. Enable GitHub Actions workflow
 
