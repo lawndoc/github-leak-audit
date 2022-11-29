@@ -1,6 +1,6 @@
 # GitHub Leak Audit
 
-A GitHub workflow that scans your organization members' personal public repos for code that has potentially been leaked from your organization. Usually, this is a simple mistake, but it is currently impossible for organizations to prevent.
+A GitHub workflow that scans your organization members' personal public repos for code that has potentially been leaked from your organization. Usually, this is a simple mistake, but it is currently impossible for organizations to prevent because GitHub doesn't support managed accounts.
 
 When the workflow is done searching for potentially leaked code, it will build a report and email it to the email addresses you specify.
 
