@@ -42,3 +42,5 @@ jobs:
           password: ${{ secrets.EMAIL_PASSWORD }}     # SMTP password
           subject: "Leak Monitor Report"
           html_body: file://LeakReport.html
+          from: Leak Report Bot
+          to: ${{ secrets.EMAIL_RECIPIENTS }}

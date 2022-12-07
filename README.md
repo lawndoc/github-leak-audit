@@ -35,6 +35,7 @@ Below is an overview of the secrets that will need to be set up in your forked r
 | EMAIL_SERVER | SMTP server address to send the email report | Yes |
 | EMAIL_USERNAME | Username to authenticate to the SMTP server | Yes |
 | EMAIL_PASSWORD | Password to authenticate to the SMTP server | Yes |
+| EMAIL_RECIPIENTS | Comma-separated list of emails to receive report (no spaces) | Yes |
 
 ### 3. Enable GitHub Actions workflow
 
