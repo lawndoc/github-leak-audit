@@ -30,7 +30,7 @@ Below is an overview of the secrets that will need to be set up in your forked r
 | APP_ID | The App ID of the GitHub App you created | If not using PAT |
 | PRIVATE_KEY | The private key of the GitHub App you created | If not using PAT |
 | PAT | You can use a personal access token (PAT) instead of a GitHub App | If not using App |
-| ORG_NAME | Your organization's "username" as it appears on GitHub | Yes |
+| ORG_NAME | Your organization's username as it appears on GitHub | Yes |
 | ORG_NICKNAME | The short name of your organization used to identify potential leaks (ex. Microsoft) | Yes |
 | EMAIL_SERVER | SMTP server address to send the email report | Yes |
 | EMAIL_USERNAME | Username to authenticate to the SMTP server | Yes |
